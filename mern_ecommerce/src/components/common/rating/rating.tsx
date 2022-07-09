@@ -1,0 +1,68 @@
+import React from 'react'
+
+interface IRatingProps {
+    value: number;
+    text: string;
+    color: string;
+}
+
+const Rating = ({ value, text, color }: IRatingProps) => {
+    return (
+        <div className="rating">
+            <span>
+                <i style={{ color: color }}
+                    className={value >= 1
+                        ? "fa-solid fa-star"
+                        : value >= 0.5
+                            ? "fa-solid fa-star-half-stroke"
+                            : "fa-regular fa-star"}
+                >
+                </i>
+            </span>
+            <span>
+                <i style={{ color: color }}
+                    className={value >= 2
+                        ? "fa-solid fa-star"
+                        : value >= 1.5
+                            ? "fa-solid fa-star-half-stroke"
+                            : "fa-regular fa-star"}
+                >
+                </i>
+            </span>  <span>
+                <i style={{ color: color }}
+                    className={value >= 3
+                        ? "fa-solid fa-star"
+                        : value >= 2.5
+                            ? "fa-solid fa-star-half-stroke"
+                            : "fa-regular fa-star"}
+                >
+                </i>
+            </span>  <span>
+                <i style={{ color: color }}
+                    className={value >= 4
+                        ? "fa-solid fa-star"
+                        : value >= 3.5
+                            ? "fa-solid fa-star-half-stroke"
+                            : "fa-regular fa-star"}
+                >
+                </i>
+            </span>  <span>
+                <i style={{ color: color }}
+                    className={value >= 5
+                        ? "fa-solid fa-star"
+                        : value >= 4.5
+                            ? "fa-solid fa-star-half-stroke"
+                            : "fa-regular fa-star"}
+                >
+                </i>
+            </span>
+            {text && <span className="ps-1">{text}</span>}
+        </div>
+    )
+}
+
+Rating.defaultProps = {
+    color: "#f8e825"
+}
+
+export default Rating
