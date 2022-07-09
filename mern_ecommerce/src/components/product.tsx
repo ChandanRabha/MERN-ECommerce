@@ -23,18 +23,18 @@ const Product = (product: IProductProps) => {
             <Card.Body>
                 <a href={`/product/${product._id}`}>
                     <Card.Title>
-                        <strong>{product.name}</strong>
+                        <b>{product.name}</b>
                     </Card.Title>
                 </a>
+                <Card.Text as="div">
+                    <div className='my-3'>
+                        {product.rating} from {product.numReviews} reviews
+                    </div>
+                </Card.Text>
+                <Card.Text as="h3">
+                    ${product.price}
+                </Card.Text>
             </Card.Body>
-            <Card.Text as="div">
-                <div className='my-3'>
-                    {product.rating} from {product.numReviews} reviews
-                </div>
-            </Card.Text>
-            <Card.Text as="h3">
-                ${product.price}
-            </Card.Text>
         </Card>
     )
 }
